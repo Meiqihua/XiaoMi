@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            font-size: 50px;
+        }
+        #box span{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        时：<span></span>
+        分：<span></span>
+        秒：<span></span>
+    </div>
+</body>
+</html>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script>
+    setInterval(function(){
+
+        let d = new Date();
+        $("span").eq(0).html(d.getHours())
+        $("span").eq(1).html(d.getMinutes())
+        $("span").eq(2).html(d.getSeconds())
+    },1000)
+</script>

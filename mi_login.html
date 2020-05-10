@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米商城 - 登录</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./icon/iconfont.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <div class="login-wrap">
+        <div class="h_logo">
+            <a href="./mi_index.html"></a>
+        </div>
+
+        <div class="banner-bg">
+            <a href="#"></a>
+        </div>
+
+        <div class="login-layout">
+            <div id="login_box">
+                <h3>账号登录</h3>
+                <div id="login_form">
+                    <input class="input-text" type="text" placeholder="请输入账号" id="userId" required><br>
+                    <input class="input-text" type="password" placeholder="密码" id="passId" required><br>
+                    <input type="button" value="登录" id="btnLogin"><br>
+                    <span id="phone_res"><a href="#">手机短信登录/注册</a></span>
+                    <span id="go_res"><a href="./mi_register.html">立即注册</a></span>
+                </div>
+            </div>
+            <div id="login_now">
+                <span><i class="iconfont icon-dengdai"></i></span>
+                <div id="message-box">正在登录中，请稍候</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script src="./js/mi_Login.js"></script>
+<script src="./js/cookieTools.js"></script>
+<script>
+
+    $(function(){
+        
+        miLogin();
+
+        $("input").focus(function(){
+            $(this).css({"borderColor":"#000"})
+        }).blur(function(){
+            $(this).css({"borderColor":"#e0e0e0"})
+        })
+
+
+        $("#btnLogin").click(function(){
+            addCookie("miName",$("#userId").val(),7);
+        });
+    })
+
+
+
+</script>

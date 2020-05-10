@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米商城 - 注册</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="./icon/iconfont.css">
+</head>
+<body>
+    <div class="res-wrap">
+        <div id="res_box">
+            <h1 class="res-logo">
+                <a href="./mi_index.html">
+                    <img src="./images/fonts.png" alt="">
+                </a>
+            </h1>
+            <h2>注册小米账号</h2>
+            <div id="res">
+                <h4>账号</h4>
+                <div class="res_input clear_fix">
+                    <input class="in-text" id="userId" type="text" placeholder="请输入以字母开头的6-16个字符,包含数字和下划线" >
+                    <span class="res_state">
+                        <i class=""></i>
+                    </span>
+                </div>
+                <h4>密码</h4>
+                <div class="res_input clear_fix">
+                    <input class="in-text" id="passId" type="password" placeholder="请输入6 - 12个字符" >
+                    <span class="res_state">
+                        <i class=""></i>
+                    </span>
+                </div>
+                <h4>再次确认密码</h4>
+                <div class="res_input clear_fix">
+                    <input class="in-text" id="passAgain" type="password" placeholder="请再次输入密码" >
+                    <span class="res_state">
+                        <i class=""></i>
+                    </span>
+                </div>
+                <input type="button" value="立即注册" id="regBtn">
+            </div>
+        </div>
+        <div id="reg_now">
+            <span><i class="iconfont icon-dengdai"></i></span>
+            <div id="message-box">正在注册中，请稍候</div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script src="./js/mi_Register.js"></script>
+<script>
+    $(function(){
+        let myTimer = null;
+        let scrollTop = 100;
+        
+        $("input").focus(function(){
+            $(this).css({"borderColor":"#000"}).next().css({"borderColor":"#000"})
+        }).blur(function(){
+            $(this).css({"borderColor":"#e0e0e0"}).next().css({"borderColor":"#e0e0e0"})
+        })
+        
+        myTimer = setInterval(function(){
+            scrollTop--;
+            if(scrollTop<=50){
+                clearInterval(myTimer);
+                myTimer=null;
+                scrollTop = 50;
+            }
+            $(window).scrollTop(scrollTop);
+        },10)
+   
+        miReg();
+    });
+</script>
