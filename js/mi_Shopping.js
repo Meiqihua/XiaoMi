@@ -1,3 +1,68 @@
+
+// 从后端获取所有的商品
+function getGoods(){
+    $.get("./php/getGoodsList.php?typeId=001",function(data){
+        showData(data);
+    },"json");
+}
+
+// 显示商品
+function showData(data){
+    
+    data.forEach(item => {
+        let htmlStr=`
+            <div class="clo clo-check">
+                <i class=""></i>
+            </div>
+            <div class="clo clo-img">
+                <a href="./mi_buyGoods.html?goodsId=${item.goodsId}"><img src="${item.goodsImg}" alt=""></a>
+            </div>
+            <div class="clo clo-name">${item.goodsName}<b>${item.beiyong1}</b> </div>
+            <div class="clo clo-price">
+            <i>${item.goodsPrice}</i>
+                元
+            </div>
+            <div class="clo clo-num">
+                <div class="goods-num">                                    
+                    <i class="reduceBtn">-</i>
+                    <input type="text" value="1">
+                    <i class="addBtn">+</i>
+                </div>
+            </div>
+            <div class="clo clo-total">
+            <i>${item.goodsPrice}</i>
+                元
+            </div>
+            <div class="clo clo-action">
+                <i class="iconfont icon-cuowu3"></i>
+            </div>
+        `;
+        let $goodsBox = document.createElement("div");
+        $("#list-body").append($($goodsBox));
+        $($goodsBox).addClass("item-box").html(htmlStr);
+    });
+
+
+
+    $(function(){
+        // 调用check.js里的函数
+        miCheck($(".clo-check i:eq(0)"),$(".clo-check i:gt(0)"));
+        // 第二套方案：checkbox
+        // $("#login_now :checkbox:eq(0)").check($("#login_now :checkbox:gt(0)"));
+
+        moneyShow();
+        numBtn();
+
+        $(".clo-check i").click(function(){
+            totalMoney()
+        })
+
+        cookieShow();
+    })
+
+}
+
+    
 // 底部结算盒子的交互
 function moneyShow(){
     $(function(){
@@ -145,3 +210,31 @@ function totalMoney(){
     });
     $("#allMoney").html(money);
 }
+
+
+// cookie交互
+function cookieShow(){
+    
+    if(document.cookie!=""){
+        
+        $("#myShop_none").css("display","none");
+        $("#myShop_now").css("display","block");
+
+
+        $(".shpHd_right").eq(1).css("display","block").prev().css("display","none");
+        $("#myId").find("b").html(getCookie("miName"));
+        $("#myId").mouseenter(function(){
+            $("#cart-my").slideToggle(200);
+        }).mouseleave(function(){
+            $("#cart-my").slideToggle(200);
+        });
+
+        $("#out").click(function(){
+            if(confirm("确认退出登录吗？")){
+                removeCookie("miName");
+                window.location.reload();
+            }
+        })
+    }
+}
+

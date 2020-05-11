@@ -58,7 +58,7 @@ function IndexShow(){
             }
         });
         $("#goTop").click(function(){
-            $(window).scrollTop(0);
+            $("body,html").animate({"scrollTop":"0"},500);
         })
     }
 
@@ -85,4 +85,74 @@ function allGoodsBox(){
     }).mouseout(function(){
         $(this).find(".banner_nav").css({"display":"none"})
     })
+}
+
+
+// 秒杀倒计时
+function goTime(){
+    let d1 = new Date();
+    let miTime = parseInt($(".flash_time").find("h4").html());
+    let nowHours = (24-(d1.getHours()-miTime))<10?"0"+(24-(d1.getHours()-miTime)):(24-(d1.getHours()-miTime));
+    if(d1.getHours()<=miTime){
+        miTime = 14;
+        $(".flash_time").find("h4").html("14:00 场")
+        nowHours = (24-miTime)<10?"0"+(24-miTime):(24-miTime);
+    }
+    let nowMinutes = (60-d1.getMinutes())<10?"0"+(60-d1.getMinutes()):(60-d1.getMinutes());
+    let nowSeconds = (60-d1.getSeconds())<10?"0"+(60-d1.getSeconds()):(60-d1.getSeconds());
+    let $timeBox = $(".time_Box").find("span")
+    $timeBox.eq(0).html(nowHours);
+    $timeBox.eq(1).html(nowMinutes);
+    $timeBox.eq(2).html(nowSeconds);
+    setInterval(function(){
+        let d2 = new Date();
+        nowHours = (24-(d2.getHours()-miTime))<10?"0"+(24-(d2.getHours()-miTime)):(24-(d2.getHours()-miTime));
+        if(miTime==14){
+            nowHours = (24-miTime)<10?"0"+(24-miTime):(24-miTime);
+        }
+        nowMinutes = (60-d2.getMinutes())<10?"0"+(60-d2.getMinutes()):(60-d2.getMinutes());
+        nowSeconds = (60-d2.getSeconds())<10?"0"+(60-d2.getSeconds()):(60-d2.getSeconds());
+        $timeBox.eq(0).html(nowHours);
+        $timeBox.eq(1).html(nowMinutes);
+        $timeBox.eq(2).html(nowSeconds);
+    },1000)
+}
+function timeNum(num){
+    if(num<10){
+        num = "0"+num;
+    }
+    return 
+}
+
+// 从数据库中获取商品
+function getGoods(){
+    // 主页手机板块
+    $.get("./php/getGoodsList.php?typeId=001",function(data){
+        showData(data);
+    },"json");
+
+    // 主页家电板块
+
+
+}
+
+function showData(data){
+    let htmlStr="";
+    let num = 0;
+    data.forEach(item => {
+        num = item.goodsId.charAt(1);
+        htmlStr += `
+            <li>
+                <a href="./mi_buyGoods.html?goodsId=${item.goodsId}">
+                    <img src="${item.goodsImg}" alt="">
+                    <h3>${item.goodsName}</h3>
+                    <h4>${item.goodsDesc}</h4>
+                    <p>
+                        <span>${item.goodsPrice}元起</span>
+                    </p>
+                </a>
+            </li>
+        `;
+    });
+    $(".sp_r").eq(num-1).html(htmlStr);
 }

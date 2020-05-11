@@ -5,7 +5,7 @@ function addCookie(key,value,count){
     document.cookie = `${key}=${escape(value)};expires=${d.toGMTString()}`;
 }
 
-// 获取
+// 获取 
 function getCookie(key){
     let str = unescape(document.cookie);
 

@@ -21,7 +21,7 @@ function mover01(oDom,  attr, startP, endP,step,direction,  timeSpace) {
             myTimer = null;
         }
 
-        // 二、外观呈现(让用户看到结果)
+        // 二、外观呈现(让用户看到结果) 
         if(attr=="opacity"){
             oDom.style[attr] = value;
         }else{
@@ -44,12 +44,12 @@ function mover02(oDom,  attr, endP,step, timeSpace) {
     var direction = startP<endP?1:-1;
 
     var myTimer = setInterval(() => {
-        // 一、数据处理
+        // 一、数据处理 
         // 1、运算
         value = value + direction*step;
         // 2、边界处理（合法性的处理）
         // if (value >= endP) {
-        if (direction>0? value >= endP:value <= endP) {
+        if (direction>0? value >= endP:value <= endP) { 
             value = endP;
             window.clearInterval(myTimer);
             myTimer = null;

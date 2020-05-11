@@ -108,21 +108,20 @@ class MiLbt{
 // 主页轮播图2
 
 class Lbt2{
-    constructor(){
+    constructor(arr,liWidth){
         // 移动
         this.ord = 0;
         this.myTimer = null;
         this.isComplete = true;
-        this.lbtWidth = parseInt(getStyle($("#lbt_2")[0],"width"))+parseInt(getStyle($("#lbt_2")[0],"margin-left"));
-        this.lbtLiWidth = parseInt(getStyle($("#lbt2_mover")[0].firstElementChild,"width"))+parseInt(getStyle($("#lbt_2")[0],"margin-left"));
-        this.moverWidth = $("#lbt2_mover")[0].children.length*this.lbtLiWidth;
-
+        this.lbtWidth = parseInt($("#lbt_2").width())+parseInt($("#lbt_2").css("margin-left"));
+        this.lbtLiWidth = Math.ceil(liWidth)
+        this.moverWidth = arr.length*this.lbtLiWidth;
         this.autoPlay();
         this.lbt2Go();
     }
 
     goNext(){
-        let lbtMgLeft = parseInt(getStyle($("#lbt2_mover")[0],"margin-left"));
+        let lbtMgLeft = parseInt($("#lbt2_mover").css("margin-left"));
         if((this.ord+1)*this.lbtWidth<=this.moverWidth){
             if(this.isComplete==false){
                 return;
@@ -152,7 +151,8 @@ class Lbt2{
     }
 
     goForward(){
-        let lbtMgLeft = parseInt(getStyle($("#lbt2_mover")[0],"margin-left"));
+        let lbtMgLeft = parseInt($("#lbt2_mover").css("margin-left"));
+        $("#lbt2_btn")[0].lastElementChild.className = "iconfont icon-jiantou-copy lbt2_active";
         if(this.ord>0){
             if((this.ord+1)*this.lbtWidth >= this.moverWidth){
                 let moverLi = this.lbtWidth - ((this.ord+1)*this.lbtWidth - this.moverWidth);
@@ -174,6 +174,10 @@ class Lbt2{
                     this.isComplete = true;
                 });
             }
+        }
+        if(this.ord==0){
+            $("#lbt2_btn")[0].firstElementChild.className = "iconfont icon-jiantou-copy";
+            $("#lbt2_btn")[0].lastElementChild.className = "iconfont icon-jiantou-copy lbt2_active";
         }
     }
 
@@ -207,52 +211,72 @@ class Lbt2{
             this.stop();
         }
     }
+
 }
 
+
 class CreateLbt2Lis{
-    constructor(oUlDom,href,img,goods,goodsTitle,oldPrice,newPrice){
+    constructor(arr){
         // 商品动态跟新
-        this.oUlDom = oUlDom;
-        this.href = href;
-        this.img = img;
-        this.goods = goods;
-        this.goodsTitle = goodsTitle;
-        this.oldPrice = oldPrice;
-        this.newPrice = newPrice;
-        this.createDom();
-
+        this.oUlDom = $("#lbt2_mover")[0];
+        this.spId = [];
+        for(let i=0;i<arr.length;i++){
+            this.spId.push(arr[i]);
+        }
+        this.getGoodsInfo();
     }
-    createDom(){
-        let lbt2_Li = document.createElement("li");
-        this.oUlDom.appendChild(lbt2_Li);
 
-        let lbt2_A = document.createElement("a");
-        lbt2_A.href = this.href;
-        lbt2_Li.appendChild(lbt2_A);
-
-        let lbt2_img = document.createElement("img");
-        lbt2_img.src = this.img;
-        lbt2_A.appendChild(lbt2_img);
-
-        let lbt2_h3 = document.createElement("h3");
-        lbt2_h3.innerHTML = this.goods;
-        lbt2_A.appendChild(lbt2_h3);
-
-        let lbt2_h4 = document.createElement("h4");
-        lbt2_h4.innerHTML = this.goodsTitle;
-        lbt2_A.appendChild(lbt2_h4);
-
-        let lbt2_P = document.createElement("p");
-        lbt2_A.appendChild(lbt2_P);
-
-        let lbt2_span = document.createElement("span");
-        lbt2_span.innerHTML = this.oldPrice + "元";
-        lbt2_P.appendChild(lbt2_span);
-
-        let lbt2_del = document.createElement("del");
-        lbt2_del.innerHTML = this.newPrice + "元";
-        lbt2_P.appendChild(lbt2_del);
+    getGoodsInfo(){
+        this.spId.forEach(i =>{
+            $.get("./php/getGoodsList.php",(data)=>{
+                this.createDom(data,i)
+            },"json")
+        })
+        let liWidth = parseInt(getComputedStyle($("#lbt2_mover")[0]).width)/4;
+        new Lbt2(this.spId,liWidth);
     }
+
+    createDom(data,i){
+        data.forEach(item => {
+            if(i ==item.goodsId){
+                let lbt2_Li = document.createElement("li");
+                this.oUlDom.appendChild(lbt2_Li);
+        
+                let lbt2_A = document.createElement("a");
+                lbt2_A.href = "./mi_buyGoods.html?goodsId="+ item.goodsId;
+                lbt2_Li.appendChild(lbt2_A);
+        
+                let lbt2_img = document.createElement("img");
+                lbt2_img.src = item.goodsImg;
+                lbt2_A.appendChild(lbt2_img);
+        
+                let lbt2_h3 = document.createElement("h3");
+                lbt2_h3.innerHTML = item.goodsDesc;
+                lbt2_A.appendChild(lbt2_h3);
+        
+                let lbt2_h4 = document.createElement("h4");
+                lbt2_h4.innerHTML = item.beiyong2;
+                lbt2_A.appendChild(lbt2_h4);
+        
+                let lbt2_P = document.createElement("p");
+                lbt2_A.appendChild(lbt2_P);
+
+                
+                let lbt2_span = document.createElement("span");
+                lbt2_span.innerHTML = item.goodsPrice + "元";
+                lbt2_P.appendChild(lbt2_span);
+        
+                if(item.beiyong3!=""){
+                    let lbt2_del = document.createElement("del");
+                    lbt2_del.innerHTML = item.beiyong3 + "元";
+                    lbt2_P.appendChild(lbt2_del);
+                }
+                
+            }
+        });
+        
+    }
+
 }
 
 
