@@ -233,6 +233,8 @@ class CreateLbt2Lis{
             },"json")
         })
         let liWidth = parseInt(getComputedStyle($("#lbt2_mover")[0]).width)/4;
+
+        // 调用轮播图2移动函数
         new Lbt2(this.spId,liWidth);
     }
 
@@ -251,11 +253,11 @@ class CreateLbt2Lis{
                 lbt2_A.appendChild(lbt2_img);
         
                 let lbt2_h3 = document.createElement("h3");
-                lbt2_h3.innerHTML = item.goodsDesc;
+                lbt2_h3.innerHTML = item.goodsName;
                 lbt2_A.appendChild(lbt2_h3);
         
                 let lbt2_h4 = document.createElement("h4");
-                lbt2_h4.innerHTML = item.beiyong2;
+                lbt2_h4.innerHTML = item.goodsDesc;
                 lbt2_A.appendChild(lbt2_h4);
         
                 let lbt2_P = document.createElement("p");

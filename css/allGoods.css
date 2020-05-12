@@ -16,7 +16,7 @@
     height: 60px;
     line-height: 60px;
     cursor: pointer;
-    padding-top: 20px;
+    padding-top: 20px!important; 
 }
 #allgoods-title>li>span>b{
     font-size: 18px;

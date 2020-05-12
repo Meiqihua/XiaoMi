@@ -124,35 +124,3 @@ function timeNum(num){
     return 
 }
 
-// 从数据库中获取商品
-function getGoods(){
-    // 主页手机板块
-    $.get("./php/getGoodsList.php?typeId=001",function(data){
-        showData(data);
-    },"json");
-
-    // 主页家电板块
-
-
-}
-
-function showData(data){
-    let htmlStr="";
-    let num = 0;
-    data.forEach(item => {
-        num = item.goodsId.charAt(1);
-        htmlStr += `
-            <li>
-                <a href="./mi_buyGoods.html?goodsId=${item.goodsId}">
-                    <img src="${item.goodsImg}" alt="">
-                    <h3>${item.goodsName}</h3>
-                    <h4>${item.goodsDesc}</h4>
-                    <p>
-                        <span>${item.goodsPrice}元起</span>
-                    </p>
-                </a>
-            </li>
-        `;
-    });
-    $(".sp_r").eq(num-1).html(htmlStr);
-}

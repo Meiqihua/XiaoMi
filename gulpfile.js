@@ -1,7 +1,7 @@
 let gulp = require("gulp");
 
 gulp.task("watch-all",async ()=>{
-    gulp.watch(["./*.html","./js/**/*","./images/**/*","./php/**/*"], async ()=>{
+    gulp.watch(["./*.html","./js/**/*","./images/**/*","./php/**/*","./css/**/*"], async ()=>{
         gulp.src("./*.html")
         .pipe(gulp.dest("E:\\phpstudy_pro\\WWW\\XiaoMi"));
         gulp.src("./js**/**")

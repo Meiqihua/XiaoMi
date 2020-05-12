@@ -14,7 +14,7 @@
 /* logo */
 .nav #allgoods{
     position: absolute;
-    left: 23%;
+    margin-left: -137px;
 }
 .banner_nav {
     top: 41px;

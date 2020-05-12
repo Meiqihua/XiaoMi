@@ -1866,11 +1866,11 @@
                     <li><img src="./images/buyGoods/mi10_lbt05.jpg" alt=""></li>
                 </ul>
                 <ul id="imgSee">
-                    <li class="see_active"><img src="./images/buyGoods/mi10_lbt01.jpg" alt=""></li>
-                    <li class=""><img src="./images/buyGoods/mi10_lbt02.jpg" alt=""></li>
-                    <li class=""><img src="./images/buyGoods/mi10_lbt03.jpg" alt=""></li>
-                    <li class=""><img src="./images/buyGoods/mi10_lbt04.jpg" alt=""></li>
-                    <li class=""><img src="./images/buyGoods/mi10_lbt05.jpg" alt=""></li>
+                    <li class="see_active"><img alt=""></li>
+                    <li class=""><img alt=""></li>
+                    <li class=""><img alt=""></li>
+                    <li class=""><img alt=""></li>
+                    <li class=""><img alt=""></li>
                 </ul>
                 <div class="goodsLbt_btn">
                     <span id="leftBtn">
@@ -1883,11 +1883,7 @@
             <div id="buy_title" class="float_left">
                 <div class="top-font">
                     <h2>小米10 Pro</h2>
-                    <p><b>「信用卡分期24期免息，低至7元起/天，碎屏保、延保享5折优惠」</b>骁龙865处理器 / 1亿像素8K电影相机，50倍数字变焦，10倍混合光学
-                        变焦 / 双模5G / 新一代LPDDR5内存 / 50W极速闪充+30W无线闪充+
-                        10W无线反充 / 对称式立体声 / 90Hz刷新率+180Hz采样率 / UFS 
-                        3.0高速存储 / 全面适配WiFi 6 / 超强VC液冷散热 / 4500mAh大电
-                        量 / 多功能NFC
+                    <p><b>「信用卡分期24期免息，低至7元起/天，碎屏保、延保享5折优惠」</b>
                     </p>
                     <h3>小米自营</h3>
                     <span class="goods-money">4999元</span>
@@ -1917,9 +1913,7 @@
                     </div>
                     <div class="choose-wrap clear_fix">
                         <h2>选择颜色</h2>
-                        <ul class="choose-show">
-                            <li class="choose-active"><a href="javascript:void(0);"><b>星空蓝</b></a></li>
-                            <li class=""><a href="javascript:void(0);"><b>珍珠白</b></a></li>
+                        <ul class="choose-show choose-color">
                         </ul>
                     </div>
                 </div>
@@ -2188,22 +2182,10 @@
         attr[1]();
 
         allGoodsBox();
-        let b1 = new MiLbt($(".goods_lbt"),{
-            imgs:[
-                "./images/buyGoods/mi10_lbt01.jpg",
-                "./images/buyGoods/mi10_lbt02.jpg",
-                "./images/buyGoods/mi10_lbt03.jpg",
-                "./images/buyGoods/mi10_lbt04.jpg",
-                "./images/buyGoods/mi10_lbt05.jpg"
-            ]
-        })
+        
 
-        $("#imgSee li").click(function(){
-            b1.goImg($(this).index())
-        });
-
-        buyGoods();
         openShow();
         cookieShow();
+        getData();
     })
 </script>
