@@ -3,7 +3,7 @@
 	//1、接受客户端的数据（用户输入的数据）
 	$vipName   = $_REQUEST['vipName'];
 	$goodsId   = $_REQUEST['goodsId'];
-	$goodsCount = $_REQUEST['goodsCount'];
+	$goodsNum = $_REQUEST['goodsNum'];
 	
 	//2、数据保存在数据库中
 	//1）、建立连接（搭桥）
@@ -15,7 +15,7 @@
 	// }
 	
 	//3）、传输数据（过桥）
-	$sqlstr = "update shoppingCart set goodsCount='".$goodsCount."' where vipName='".$vipName."' and goodsId='".$goodsId."'";
+	$sqlstr = "update shoppingCart set goodsNum='".$goodsNum."' where vipName='".$vipName."' and goodsId='".$goodsId."'";
 	//echo($sqlstr);
 	
 	if(!mysqli_query($conn,$sqlstr)){

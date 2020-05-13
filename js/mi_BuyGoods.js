@@ -1,4 +1,4 @@
-
+// 规格点击事件
 function buyGoods(){
     let $oLis01 = $(".choose-show").eq(0).find("li");
     let $oLis02 = $(".choose-show").eq(1).find("li");
@@ -56,10 +56,16 @@ function openShow(){
 // 获取后端数据
 function getData(){
     let goodsId = location.search.split("=")[1];
-
+    // 获取数据展示在页面上
     $.get("./php/getGoodsInfo.php","goodsId="+goodsId,function(data){
         showData(data);
     },"json");
+    
+    $.get("./php/getGoodsList.php",function(data){
+        showNavData(data);
+        showNavData(data);
+    },"json");
+    
 }
 
 function showData(data){
@@ -89,8 +95,8 @@ function showData(data){
     $(".goods-font").html(`
         <div>
             <span>${data.goodsName}</span>
-            <span>8GB+256GB</span>
-            <span>${goodsColor}</span>
+            <span>8+256GB</span>
+            <span>${goodsColor[0]}</span>
         </div>
         <span>
         <i class="now-money">${data.goodsPrice}</i>元
@@ -111,6 +117,7 @@ function showData(data){
 
             //调用点击事件的函数 
             buyGoods(data);
+            addGoodsCart();
         }else{
             $(".goods_lbt").find("li:gt(0)").remove();
             $(".goods_lbt").find("img").attr("src",data.beiyong8);
@@ -120,7 +127,7 @@ function showData(data){
                 <div class="goods-font">
                     <div>
                         <span>${data.goodsName}</span>
-                        <span>${data.beiyong1}</span>
+                        <span>${data.beiyong1[0]}</span>
                     </div>
                     <span>
                     <i class="now-money">${data.goodsPrice}</i>元
@@ -130,7 +137,6 @@ function showData(data){
                     总计 ：<span class="now-money">${data.goodsPrice}</span> 元
                 </div>
             `);
-                    
         }
         
     })
@@ -160,4 +166,96 @@ function showData(data){
         })
     }
 
+    
+    
+    
+}
+
+function showNavData(data){
+    let navStr = "";
+    data.forEach(item => {
+        navStr = `
+            <li>
+                <a href="./mi_buyGoods.html?goodsId=${item.goodsId}">
+                    <div class="bd_box">
+                        <img src="${item.beiyong13}" alt="">
+                    </div>
+                    <div class="nav_font">
+                        <h4>${item.goodsName}</h4>
+                        <span>${item.goodsPrice}</span>
+                    </div>
+                </a>
+            </li>
+        `;
+
+        switch(item.beiyong2){
+            case "xiaomi":
+                $("#xm").append(navStr);
+                break;
+            case "redmi":
+                $("#rm").append(navStr);
+                break;
+            case "tv":
+                $("#tv").append(navStr);
+                break; 
+            case "pc": 
+                $("#pc").append(navStr);
+                break; 
+            case "jd": 
+                $("#jd").append(navStr);
+                break; 
+            case "lyq": 
+                $("#lyq").append(navStr);
+                break; 
+            case "zn": 
+                $("#zn").append(navStr);
+                break; 
+            default:
+                break;
+        }
+    })
+}
+
+function addGoodsCart(){
+    // 添加购物车
+    $(".goCart").click(function(){
+        let goodsCount = "";
+        $(".goods-font").find("div span").each(function(){
+            goodsCount += $(this).html() + "&nbsp;";
+        });
+        goodsCount += "," + $(".now-money").html();
+        $.ajax({
+            type:"POST",
+            url:"./php/addShoppingCart.php",
+            data:{
+                "vipName":getCookie("miName"),
+                "goodsId":location.search.split("=")[1],
+                "goodsCount":goodsCount,
+                "goodsNum":1
+            },
+            dataType:"json",
+            success:(str)=>{
+                console.log(str)
+                if(str==1){
+                    $("#exist").find("h2").html("已成功加入购物车!");
+                    existShow();
+                }else if(str==0){
+                    existShow();
+                }
+            }
+        });
+    })
+    function existShow(){
+        $("#exist").fadeIn(500).find("#remove_del").click(function(){
+            $("#exist").fadeOut(500);
+        })
+        $("#exist-box").animate({
+            "bottom":"40%"
+        })
+        $("#existL").click(function(){
+            $("#exist").fadeOut(500,function(){
+                location.reload();
+            });
+        })
+    }
 }

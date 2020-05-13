@@ -15,7 +15,11 @@ function getGoods(){
         showNavData(data);
     },"json");
     
-
+    $.get("./php/getShoppingCart.php",{
+        "vipName":getCookie("miName")
+    },function(data){
+        showHeadData(data);
+    },"json")
 }
 
 function showData(data,num){
@@ -119,4 +123,96 @@ function showNavData(data){
                 break;
         }
     })
+}
+
+function showHeadData(data){
+    
+    let htmlStr = "";
+    data.forEach(item =>{
+        let goodsCount = item.goodsCount.split(",");
+        htmlStr += `
+            <div class="goods-list clear_fix">
+                <div class="list-img float_left">
+                    <a href="./mi_buyGoods.html?goodsId=${item.goodsId}">
+                        <img src=${item.goodsImg} alt="">
+                    </a>
+                </div>
+                <div class="list-title float_left">
+                    <a href="./mi_buyGoods.html?goodsId=${item.goodsId}">
+                        ${goodsCount[0]}
+                    </a>
+                </div>
+                <h2 class="list-count float_left">
+                    ${goodsCount[1]}元 × ${item.goodsNum}
+                </h2>
+                <span class="list-del" class="float_left">×</span>
+            </div>
+        `;
+    })
+    $("#list-box").append(htmlStr);
+
+
+    // 顶部购物车交互
+    $("#Ashow").css({
+        "display": "block",
+        "border": "none",
+        "padding": "0 15px 0 40px",
+        "line-height": '40px',
+        "position": "relative",
+        "background": '#424242',
+        "color": 'rgba(255,255,255,.6)'
+    });
+    $(".goods-list").not($(".goods-list:last")).css("border-bottom","1px solid #e0e0e0");
+    $(".goods-list").hover(function(){
+        $(this).find(".list-del").css("visibility","visible");
+    },function(){
+        $(this).find(".list-del").css("visibility","hidden");
+    })
+    $(".cart").mouseenter(function(){
+        $("#Ashow").css({
+            "display": "block",
+            "border": "none",
+            "padding": "0 15px 0 40px",
+            "line-height": '40px',
+            "position": "relative",
+            "background": '#fff',
+            "color": '#ff6700'
+        });
+        // $("#goodsBox").animate({
+        //     "min-height":"100px"
+        // },300);
+        $("#nowGoods").slideToggle(300)
+        if(data.vipName==""){
+            $("#notGoods").fadeIn(300);
+        }
+    }).mouseleave(function(){
+        $("#Ashow").css({
+            "display": "block",
+            "border": "none",
+            "padding": "0 15px 0 40px",
+            "line-height": '40px',
+            "position": "relative",
+            "background": '#424242',
+            "color": 'rgba(255,255,255,.6)'
+        });
+        // $("#goodsBox").animate({
+        //     "min-height":"0"
+        // },500);
+        $("#nowGoods").slideToggle(300)
+        if(data.vipName==""){
+            $("#notGoods").fadeOut(300);
+        }
+    })
+
+    $(".list-del").each(function(i){
+        $(this).click(function(){
+            $(this).parent().animate({
+                "opacity":"0",
+                "height":"0"
+            },300,function(){
+                $(this).remove();
+            })
+        })
+    })
+
 }

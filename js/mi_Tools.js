@@ -12,7 +12,7 @@ function IndexShow(){
         });
 
         $navLi.each(function(i){
-            if(i<$navLi.length-3){
+            if(i<7){
                 $(this).mouseover(function(){
                     let $index = $(this).index();
                     $("#nav_bg").css({

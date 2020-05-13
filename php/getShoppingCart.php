@@ -40,6 +40,7 @@
 		"goodsType":"'.$query_row[24].'",
 		"goodsPrice":"'.$query_row[3].'",
 		"goodsCount":"'.$query_row[22].'",
+		"goodsNum":"'.$query_row[23].'",
 		"goodsDesc":"'.$query_row[5].'",
 		"goodsImg":"'.$query_row[6].'",
 		"beiyong1":"'.$query_row[7].'",
