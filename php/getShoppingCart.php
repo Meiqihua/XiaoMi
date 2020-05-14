@@ -39,6 +39,7 @@
 		"goodsName":"'.$query_row[1].'",
 		"goodsType":"'.$query_row[24].'",
 		"goodsPrice":"'.$query_row[3].'",
+		"vipName":"'.$query_row[20].'",
 		"goodsCount":"'.$query_row[22].'",
 		"goodsNum":"'.$query_row[23].'",
 		"goodsDesc":"'.$query_row[5].'",

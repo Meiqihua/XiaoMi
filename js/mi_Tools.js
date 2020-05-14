@@ -10,22 +10,22 @@ function IndexShow(){
             $(this).css({"border-color":"#dfdfdf"});
             $(".search_btn").css({"border-color":"#dfdfdf"});
         });
-
+    
         $navLi.each(function(i){
             if(i<7){
                 $(this).mouseover(function(){
                     let $index = $(this).index();
                     $("#nav_bg").css({
-                        "height":"229px",
+                        "height":"189px",
                         "z-index":"99",
                         "box-shadow": "0 3px 4px rgba(0,0,0,.18)",
                         "border-top": "1px solid #e0e0e0"
                     });
-                    $shows.css({"height":"229px"});
+                    $shows.css({"height":"189px"});
                     $shows.eq($index).css({"z-index":"999"});
                     $showUls.eq($index).children().css({"display":"block"});
                 });
-
+                
                 $(this).mouseout(function(){
                     let $index = $(this).index();
                     $("#nav_bg").css({
@@ -124,3 +124,71 @@ function timeNum(num){
     return 
 }
 
+// banner板块
+function bannerShow(){
+    $.get("./php/getGoodsList.php",function(data){
+        showBannerData(data);
+    },"json");
+
+    function showBannerData(data){
+        let bannerStr = "";
+        data.forEach(item => {
+            bannerStr = `
+            <li>
+                <a href="./mi_buyGoods.html?goodsId=${item.goodsId}">
+                    <img src="${item.beiyong13}" alt="">
+                    <span>${item.goodsName}</span>
+                </a>
+            </li>
+            `;
+            switch(item.typeId){
+                case "001":
+                    $(".ty001").append(bannerStr);
+                    break;
+                case "002":
+                    $(".ty002").append(bannerStr);
+                    $(".ty002").append(bannerStr);
+                    break;
+                case "003":
+                    $(".ty003").append(bannerStr);
+                    break; 
+                case "004": 
+                    $(".ty004").append(bannerStr);
+                    break; 
+                case "005": 
+                    $(".ty005").append(bannerStr);
+                    $(".ty005").append(bannerStr);
+                    break; 
+                case "006": 
+                    $(".ty006").append(bannerStr);
+                    $(".ty006").append(bannerStr);
+                    break; 
+                case "007": 
+                    $(".ty007").append(bannerStr);
+                    $(".ty007").append(bannerStr);
+                    break; 
+                case "008": 
+                    $(".ty008").append(bannerStr);
+                    $(".ty008").append(bannerStr);
+                    break; 
+                case "009": 
+                    $(".ty009").append(bannerStr);
+                    $(".ty009").append(bannerStr);
+                    break; 
+                case "010":
+                    $(".ty010").append(bannerStr);
+                    $(".ty010").append(bannerStr);
+                    break; 
+                default:
+                    break;
+            }
+        });
+    }
+}
+
+
+function addTypeId(){
+    $(".a_Box").each(function(i){
+        $(this).prev().attr("href","./mi_allGodds.html?typeId="+i)
+    })
+}

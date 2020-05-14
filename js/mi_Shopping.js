@@ -12,7 +12,6 @@ function getGoods(){
 // 显示商品
 function showData(data){
     data.forEach(item => {
-        console.log(item.goodsNum)
         let goodsCount = item.goodsCount.split(",");
         let htmlStr=`
             <div class="clo clo-check">
@@ -240,7 +239,7 @@ function totalMoney(){
 }
 
 
-// cookie交互
+// 登录cookie交互
 function cookieShow(data){
     
     if(document.cookie!=""){

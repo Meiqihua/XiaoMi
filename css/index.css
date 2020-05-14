@@ -125,6 +125,8 @@
 }
 .a_Box ul {
     float: left;
+    height: 456px;
+    overflow: hidden;
 }
 .a_Box li a{
     display: block;
@@ -144,6 +146,8 @@
     top: 50%;
     transform: translateY(-50%);
     display: inline-block;
+    width: 40px;
+    height: 40px;
 }
 .banner_nav>li:nth-of-type(1):hover .box1{
     display: block;

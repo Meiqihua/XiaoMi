@@ -44,7 +44,7 @@
 	
 	$query_row = mysqli_fetch_array($result);//游标下移,拿出结果集中的某一行，返回值是拿到的行；
 	while($query_row){
-		$str = $str.'{ "goodsId":"'.$query_row[0].'","goodsName":"'.$query_row[1].'"
+		$str = $str.'{ "goodsId":"'.$query_row[0].'","goodsName":"'.$query_row[1].'","typeId":"'.$query_row[2].'"
 		,"goodsType":"'.$query_row[20].'","goodsPrice":"'.$query_row[3].'"
 		,"goodsCount":"'.$query_row[4].'","goodsDesc":"'.$query_row[5].'"
 		,"goodsImg":"'.$query_row[6].'","beiyong1":"'.$query_row[7].'"

@@ -238,7 +238,8 @@
 #nowGoods .goShop{
     background: #fafafa;
     height: 60px;
-    padding: 15px 20px 0 20px;
+    padding: 5px 20px 0 20px;
+    display: none;
 }
 #nowGoods .goShop .goShop-l h4{
     font-size: 12px;
@@ -260,6 +261,7 @@
     font-size: 14px;
     background: #ff6700;
     padding: 0;
+    margin-top: 5px;
     text-align: center;
 }
 #goodsBox .goods-list .list-title {
@@ -274,7 +276,7 @@
 .hdr_r .cart #goodsBox {
     content: '';
     width: 316px;
-    z-index: 5;
+    z-index: 999;
     background: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, .15);
     position: absolute;
@@ -709,4 +711,20 @@
 .fd_box span {
     font-size: 16px;
     line-height: 16px;
+}
+#showNum {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: red;
+    right: 16px;
+    top: 12px;
+    border-radius: 100%;
+    color: #fff;
+    font-size: 12px;
+    line-height: 15px;
+    display: none;
+}
+#cart_P{
+    position: relative;
 }

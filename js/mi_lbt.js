@@ -246,6 +246,7 @@ class CreateLbt2Lis{
         
                 let lbt2_A = document.createElement("a");
                 lbt2_A.href = "./mi_buyGoods.html?goodsId="+ item.goodsId;
+                lbt2_A.target="_blank"
                 lbt2_Li.appendChild(lbt2_A);
         
                 let lbt2_img = document.createElement("img");

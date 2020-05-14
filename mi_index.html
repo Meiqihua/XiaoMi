@@ -56,7 +56,8 @@
                     <li id="myOrder"><a href="#">我的订单</a></li>
                     <li class="cart">
                         <a id="Ashow" href="./mi_shopping-cart.html">
-                            <i class="iconfont icon-gouwuchekong"></i>购物车（0）</a>
+                            <i class="iconfont icon-gouwuchekong"></i>购物车（<b id="goods_Num">0</b>）
+                        </a>
                             <div id="goodsBox">
                                 <h2 id="notGoods">购物车中还没有商品，赶紧选购吧！</h2>
                                 <div id="nowGoods">
@@ -65,8 +66,8 @@
                                     </div>
                                     <div class="goShop clear_fix">
                                         <div class="goShop-l float_left">
-                                            <h4>共 2 件商品</h4>
-                                            <h2><b>1111</b>元</h2>
+                                            <h4>共 <b id="isNum">0</b> 件商品</h4>
+                                            <h2><b id="allMoney">1111</b>元</h2>
                                         </div>
                                         <div class="goShop-r float_right">
                                             <a href="./mi_shopping-cart.html">去购物车结算</a>
@@ -189,11 +190,11 @@
         <div class="banner-wrap">
             <div id="lbt">
                 <ul id="index-lbt">
-                    <li><a href="#"><img src="" alt=""></a></li>
-                    <li><a href="#"><img src="" alt=""></a></li>
-                    <li><a href="#"><img src="" alt=""></a></li>
-                    <li><a href="#"><img src="" alt=""></a></li>
-                    <li><a href="#"><img src="" alt=""></a></li>
+                    <li><a target="_blank" href="./mi_buyGoods.html?goodsId=01003"><img src="" alt=""></a></li>
+                    <li><a target="_blank" href="./mi_buyGoods.html?goodsId=01002"><img src="" alt=""></a></li>
+                    <li><a target="_blank" href="./mi_51special.html"><img src="" alt=""></a></li>
+                    <li><a target="_blank" href="./mi_buyGoods.html?goodsId=03001"><img src="" alt=""></a></li>
+                    <li><a target="_blank" href="./mi_buyGoods.html?goodsId=06001"><img src="" alt=""></a></li>
                 </ul>
                 <ul id="bimg_btn">
                     <li class="banner_active"></li>
@@ -209,1223 +210,124 @@
             </div>
             <ul class="banner_nav">
                 <li>
-                    <a href="#">手机 电话卡<i class="iconfont icon-arrow-right-copy"></i></a>
+                    <a href="./mi_allGodds.html" class="goAll">手机 电话卡<i class="iconfont icon-arrow-right-copy"></i></a>
                     <div class="a_Box box1">
-                        <ul class="clear_fix ulShow">
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
+                        <ul class="clear_fix ulShow ty001">
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
+                        <ul class="ty001">
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
+                        <ul class="ty001">
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-phone.webp" alt="">
-                                    <span>腾讯黑鲨游戏手机3 Pro</span>
-                                </a>
-                            </li>
+                        <ul class="ty001">
                         </ul>
                     </div>
                 </li>
 
                 <li>
-                    <a href="#">电视 盒子<i class="iconfont icon-arrow-right-copy"></i></a>
+                    <a href="./mi_allGodds.html" class="goAll">电视 盒子<i class="iconfont icon-arrow-right-copy"></i></a>
                     <div class="a_Box box2">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
+                        <ul class="ty003">
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
+                        <ul class="ty003">
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
+                        <ul class="ty003">
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianshi.webp" alt="">
-                                    <span>小米电视5 55英寸</span>
-                                </a>
-                            </li>
+                        <ul class="ty003">
                         </ul>
                     </div>
                 </li>
 
                 <li>
-                    <a href="#">笔记本 显示器 平板<i class="iconfont icon-arrow-right-copy"></i></a>
+                    <a href="./mi_allGodds.html" class="goAll">笔记本 显示器 平板<i class="iconfont icon-arrow-right-copy"></i></a>
                     <div class="a_Box box3">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-diannao.webp" alt="">
-                                    <span>RedmiBook 13</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-diannao.webp" alt="">
-                                    <span>RedmiBook 13</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-diannao.webp" alt="">
-                                    <span>RedmiBook 13</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-diannao.webp" alt="">
-                                    <span>RedmiBook 13</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-diannao.webp" alt="">
-                                    <span>RedmiBook 13</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-diannao.webp" alt="">
-                                    <span>RedmiBook 13</span>
-                                </a>
-                            </li>
+                        <ul class="ty002">
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-diannao.webp" alt="">
-                                    <span>RedmiBook 13</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-diannao.webp" alt="">
-                                    <span>RedmiBook 13</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-diannao.webp" alt="">
-                                    <span>RedmiBook 13</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-diannao.webp" alt="">
-                                    <span>RedmiBook 13</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-diannao.webp" alt="">
-                                    <span>RedmiBook 13</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-diannao.webp" alt="">
-                                    <span>RedmiBook 13</span>
-                                </a>
-                            </li>
+                        <ul class="ty002">
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-diannao.webp" alt="">
-                                    <span>RedmiBook 13</span>
-                                </a>
-                            </li>
+                        <ul class="ty002">
                         </ul>
                     </div>
                 </li>
 
                 <li>
-                    <a href="#">家电 插线板<i class="iconfont icon-arrow-right-copy"></i></a>
+                    <a href="./mi_allGodds.html" class="goAll">家电 插线板<i class="iconfont icon-arrow-right-copy"></i></a>
                     <div class="a_Box box4">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
+                        <ul class="ty005">
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
+                        <ul class="ty005">
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
+                        <ul class="ty005">
                         </ul>
 
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-jiadian.webp" alt="">
-                                    <span>冰箱</span>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </li>
 
                 <li>
-                    <a href="#">出行 穿戴<i class="iconfont icon-arrow-right-copy"></i></a>
+                    <a href="./mi_allGodds.html" class="goAll">出行 穿戴<i class="iconfont icon-arrow-right-copy"></i></a>
                     <div class="a_Box box5">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>小米手表</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>小米手表</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>小米手表</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>小米手表</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>小米手表</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>小米手表</span>
-                                </a>
-                            </li>
+                        <ul class="ty006">
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>小米手表</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>小米手表</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>小米手表</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>小米手表</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>小米手表</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>小米手表</span>
-                                </a>
-                            </li>
+                        <ul class="ty006">
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>小米手表</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>小米手表</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>小米手表</span>
-                                </a>
-                            </li>
+                        <ul class="ty006">
                         </ul>
                     </div>
                 </li>
 
                 <li>
-                    <a href="#">智能 路由器<i class="iconfont icon-arrow-right-copy"></i></a>
+                    <a href="./mi_allGodds.html" class="goAll">智能 路由器<i class="iconfont icon-arrow-right-copy"></i></a>
                     <div class="a_Box box6">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-luyouqi.webp" alt="">
-                                    <span>小米路由器</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-luyouqi.webp" alt="">
-                                    <span>小米路由器</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-luyouqi.webp" alt="">
-                                    <span>小米路由器</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-luyouqi.webp" alt="">
-                                    <span>小米路由器</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-luyouqi.webp" alt="">
-                                    <span>小米路由器</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-luyouqi.webp" alt="">
-                                    <span>小米路由器</span>
-                                </a>
-                            </li>
+                        <ul class="ty004">
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-luyouqi.webp" alt="">
-                                    <span>小米路由器</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-luyouqi.webp" alt="">
-                                    <span>小米路由器</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-luyouqi.webp" alt="">
-                                    <span>小米路由器</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-luyouqi.webp" alt="">
-                                    <span>小米路由器</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-luyouqi.webp" alt="">
-                                    <span>小米路由器</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-luyouqi.webp" alt="">
-                                    <span>小米路由器</span>
-                                </a>
-                            </li>
+                        <ul class="ty004">
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-luyouqi.webp" alt="">
-                                    <span>小米路由器</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-luyouqi.webp" alt="">
-                                    <span>小米路由器</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-luyouqi.webp" alt="">
-                                    <span>小米路由器</span>
-                                </a>
-                            </li>
+                        <ul class="ty004">
                         </ul>
                     </div>
                 </li>
 
                 <li>
-                    <a href="#">电源 配件<i class="iconfont icon-arrow-right-copy"></i></a>
+                    <a href="./mi_allGodds.html" class="goAll">电源 配件<i class="iconfont icon-arrow-right-copy"></i></a>
                     <div class="a_Box box7">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianyuan.webp" alt="">
-                                    <span>移动电源</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianyuan.webp" alt="">
-                                    <span>移动电源</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianyuan.webp" alt="">
-                                    <span>移动电源</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianyuan.webp" alt="">
-                                    <span>移动电源</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianyuan.webp" alt="">
-                                    <span>移动电源</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianyuan.webp" alt="">
-                                    <span>移动电源</span>
-                                </a>
-                            </li>
+                        <ul class="ty007"> 
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianyuan.webp" alt="">
-                                    <span>移动电源</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianyuan.webp" alt="">
-                                    <span>移动电源</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianyuan.webp" alt="">
-                                    <span>移动电源</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianyuan.webp" alt="">
-                                    <span>移动电源</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianyuan.webp" alt="">
-                                    <span>移动电源</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-dianyuan.webp" alt="">
-                                    <span>移动电源</span>
-                                </a>
-                            </li>
+                        <ul class="ty007">
                         </ul>
                     </div>
                 </li>
 
                 <li>
-                    <a href="#">健康 儿童<i class="iconfont icon-arrow-right-copy"></i></a>
+                    <a href="./mi_allGodds.html" class="goAll">健康 儿童<i class="iconfont icon-arrow-right-copy"></i></a>
                     <div class="a_Box box8">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
+                        <ul class="ty008"> 
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
+                        <ul class="ty008">
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
+                        <ul class="ty008"> 
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-chuxin.webp" alt="">
-                                    <span>洗手机</span>
-                                </a>
-                            </li>
+                        <ul class="ty008"> 
                         </ul>
                     </div>
                 </li>
 
                 <li>
-                    <a href="#">耳机 音箱<i class="iconfont icon-arrow-right-copy"></i></a>
+                    <a href="./mi_allGodds.html" class="goAll">耳机 音箱<i class="iconfont icon-arrow-right-copy"></i></a>
                     <div class="a_Box box9">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-yinxiang.webp" alt="">
-                                    <span>小爱音箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-yinxiang.webp" alt="">
-                                    <span>小爱音箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-yinxiang.webp" alt="">
-                                    <span>小爱音箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-yinxiang.webp" alt="">
-                                    <span>小爱音箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-yinxiang.webp" alt="">
-                                    <span>小爱音箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-yinxiang.webp" alt="">
-                                    <span>小爱音箱</span>
-                                </a>
-                            </li>
+                        <ul class="ty009"> 
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-yinxiang.webp" alt="">
-                                    <span>小爱音箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-yinxiang.webp" alt="">
-                                    <span>小爱音箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-yinxiang.webp" alt="">
-                                    <span>小爱音箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-yinxiang.webp" alt="">
-                                    <span>小爱音箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-yinxiang.webp" alt="">
-                                    <span>小爱音箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-yinxiang.webp" alt="">
-                                    <span>小爱音箱</span>
-                                </a>
-                            </li>
+                        <ul class="ty009"> 
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-yinxiang.webp" alt="">
-                                    <span>小爱音箱</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-yinxiang.webp" alt="">
-                                    <span>小爱音箱</span>
-                                </a>
-                            </li>
+                        <ul class="ty009"> 
                         </ul>
                     </div>
                 </li>
 
                 <li>
-                    <a href="#">生活 箱包<i class="iconfont icon-arrow-right-copy"></i></a>
+                    <a href="./mi_allGodds.html" class="goAll">生活 箱包<i class="iconfont icon-arrow-right-copy"></i></a>
                     <div class="a_Box box10">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
+                        <ul class="ty010"> 
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="./images/banner-beibao.webp" alt="">
-                                    <span>小背包</span>
-                                </a>
-                            </li>
+                        <ul class="ty010">
                         </ul>
                     </div>
                 </li>
@@ -1520,12 +422,13 @@
             </div>
             <span>人工服务</span>
         </a>
-        <a href="./mi_shopping-cart.html">
+        <a href="./mi_shopping-cart.html" id="cart_P">
             <div class="fd_box">
                 <img src="./images/nav55.png" alt="">
                 <img src="./images/nav5.png" alt="">
             </div>
             <span>购物车</span>
+            <span id="showNum"></span>
         </a>
         
         <a href="#" id="goTop">
@@ -1577,7 +480,7 @@
                 </div>
                 <div class="case_show1">
                     <h2 class="font_t">手机
-                        <a href="./mi_allGodds.html">查看全部
+                        <a href="./mi_allGodds.html" class="goAll">查看全部
                             <i class="iconfont icon-arrow-right-copy"></i>
                         </a>
                     </h2>
@@ -1839,6 +742,18 @@
             </div>
         </div>
     </div>
+
+    <!--  -->
+    <div id="head-del">
+        <div id="head-del-box">
+            <h2>该商品已经在您的购物车里了</h2>
+            <a href="javascript:void(0);" id="existL" class="exist-btn el">确定</a>
+            <a href="./mi_shopping-cart.html" id="existR" class="exist-btn">查看</a>
+            <div id="head-remove_del">
+                <i class="iconfont icon-cuowu3"></i>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
@@ -1858,8 +773,8 @@ $(function(){
 
     // 动态添加轮播图2商品 
     let b2 = new CreateLbt2Lis(
-        ["01001","01002","01003","01004","01005","01006","01007"
-         ,"01001","01002","01003","01004","01005","01006","01007"]);
+        ["01001","01002","01003","03010","04003","03008","03002"
+         ,"03009","08003","06002","10001","07002","03004","04004"]);
 
         
 
@@ -1890,6 +805,7 @@ $(function(){
 
     // 调用动态创建商品函数
     getGoods();
+    bannerShow();
 })
 
 
