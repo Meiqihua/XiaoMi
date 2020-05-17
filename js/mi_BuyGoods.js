@@ -443,3 +443,21 @@ function addGoodsCart(){
         })
     }
 }
+
+
+
+
+$(function(){
+    cookieShow();
+    let attr = IndexShow();
+    attr[0]();
+    attr[1]();
+
+    allGoodsBox();
+    
+
+    openShow();
+    getData();
+    bannerShow();
+    addTypeId();
+})

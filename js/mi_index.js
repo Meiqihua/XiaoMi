@@ -296,3 +296,48 @@ function cartHover(data,allNum){
         }
     })
 }
+
+
+$(function(){
+    let attr = IndexShow();
+    attr.forEach(function(item){
+        item();
+    })
+
+    // 动态添加轮播图2商品 
+    let b2 = new CreateLbt2Lis(
+        ["01001","01002","01003","03010","04003","03008","03002"
+         ,"03009","08003","06002","10001","07002","03004","04004"]);
+
+        
+
+
+    // 调用大轮播图函数
+    let b1 = new MiLbt($("#index-lbt"))
+
+    function lbt2Color(){
+        let colors = ["#ffac13","#83c44e","#2196f3","#e53935","#00c0a5"];
+        let num=0;
+        $("#lbt2_mover").find("li").each(function(){
+            num++;
+            if(num>=5){
+                num = 0;
+            }
+            $(this).css({"border-color":colors[num]})
+        })
+    }
+    lbt2Color();
+    cookieShow();
+    goTime();
+
+    $(".sp_l:gt(0)").find("a").css({
+        "width": '234px',
+        "height": "300px",
+        "margin": "0 0 14px 0"
+    })
+
+    // 调用动态创建商品函数
+    getGoods();
+    bannerShow();
+})
+

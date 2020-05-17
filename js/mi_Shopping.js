@@ -6,7 +6,7 @@ function getGoods(){
     },function(data){
         showData(data);
     },"json")
-    
+     
 }
 
 // 显示商品
@@ -269,3 +269,9 @@ function cookieShow(data){
     }
 }
 
+
+
+$(function(){
+    // 从后端获取商品数据
+    getGoods();
+})

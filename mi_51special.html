@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小米商城 - 五一大折扣！</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./icon/iconfont.css">
     <link rel="stylesheet" href="./css/51special.css">
-</head>
-<body>
-    <!-- header-bg -->
+</head> 
+<body> 
+    <!-- header-bg -->  
     <div id="header-bg">
         <div class="headBg-wrap">
             <a href="#">
@@ -330,23 +330,4 @@
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script src="./js/cookieTools.js"></script>
 <script src="./js/mi_Tools.js"></script>
-<script>
-    $(function(){
-        let attr = IndexShow();
-        attr[1]();
-
-        $.get("./php/getShoppingCart.php",{
-            "vipName":getCookie("miName")
-        },function(data){
-            show51Data(data);
-        },"json")
-
-        function show51Data(data){
-            let allNum = 0;
-            data.forEach(item => {
-                allNum += parseInt(item.goodsNum)
-            });
-            $("#showNum").css("display","block").html(allNum)
-        }
-    })
-</script>
+<script src="./js/mi_51.js"></script>

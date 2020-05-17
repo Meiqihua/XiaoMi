@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./icon/iconfont.css">
     <link rel="stylesheet" href="./css/buyGoods.css">
-    <link rel="stylesheet" href="./css/allGoods.css">
-</head>
+    <link rel="stylesheet" href="./css/allGoodslist.css">
+</head> 
 <body>
-
     <!-- header -->
     <div id="header">
         <div class="header-wrap">
@@ -578,19 +577,3 @@
 <script src="./js/mi_allGoods.js"></script>
 <script src="./js/cookieTools.js"></script>
 <script src="./js/cookieShow.js"></script>
-<script>
-    $(function(){
-        let attr = IndexShow();
-        attr[0]();
-        attr[1]();
-        allGoodsBox();
-        cookieShow();
-
-        // 后端数据交互
-        bannerShow();
-        getAllGoodsData();
-
-        addTypeId();
-    });
-
-</script>

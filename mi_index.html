@@ -743,17 +743,7 @@
         </div>
     </div>
 
-    <!--  -->
-    <div id="head-del">
-        <div id="head-del-box">
-            <h2>该商品已经在您的购物车里了</h2>
-            <a href="javascript:void(0);" id="existL" class="exist-btn el">确定</a>
-            <a href="./mi_shopping-cart.html" id="existR" class="exist-btn">查看</a>
-            <div id="head-remove_del">
-                <i class="iconfont icon-cuowu3"></i>
-            </div>
-        </div>
-    </div>
+    
 </body>
 
 </html>
@@ -762,53 +752,4 @@
 <script src="./js/mi_Tools.js"></script>
 <script src="./js/mi_lbt.js"></script>
 <script src="./js/cookieShow.js"></script>
-<script src="./js/index.js"></script>
-<script>
-
-$(function(){
-    let attr = IndexShow();
-    attr.forEach(function(item){
-        item();
-    })
-
-    // 动态添加轮播图2商品 
-    let b2 = new CreateLbt2Lis(
-        ["01001","01002","01003","03010","04003","03008","03002"
-         ,"03009","08003","06002","10001","07002","03004","04004"]);
-
-        
-
-
-    // 调用大轮播图函数
-    let b1 = new MiLbt($("#index-lbt"))
-
-    function lbt2Color(){
-        let colors = ["#ffac13","#83c44e","#2196f3","#e53935","#00c0a5"];
-        let num=0;
-        $("#lbt2_mover").find("li").each(function(){
-            num++;
-            if(num>=5){
-                num = 0;
-            }
-            $(this).css({"border-color":colors[num]})
-        })
-    }
-    lbt2Color();
-    cookieShow();
-    goTime();
-
-    $(".sp_l:gt(0)").find("a").css({
-        "width": '234px',
-        "height": "300px",
-        "margin": "0 0 14px 0"
-    })
-
-    // 调用动态创建商品函数
-    getGoods();
-    bannerShow();
-})
-
-
-
-
-</script>
+<script src="./js/mi_index.js"></script>

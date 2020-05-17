@@ -183,3 +183,28 @@ function passAgain(){
         return false;
     }
 }
+
+
+
+$(function(){
+    let myTimer = null;
+    let scrollTop = 100;
+    
+    $("input").focus(function(){
+        $(this).css({"borderColor":"#000"}).next().css({"borderColor":"#000"})
+    }).blur(function(){
+        $(this).css({"borderColor":"#e0e0e0"}).next().css({"borderColor":"#e0e0e0"})
+    })
+    
+    myTimer = setInterval(function(){
+        scrollTop--;
+        if(scrollTop<=50){
+            clearInterval(myTimer);
+            myTimer=null;
+            scrollTop = 50;
+        }
+        $(window).scrollTop(scrollTop);
+    },10)
+
+    miReg();
+});

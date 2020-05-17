@@ -72,3 +72,22 @@
             }
         });
     }
+
+
+    
+    $(function(){
+        
+        miLogin();
+
+        $("input").focus(function(){
+            $(this).css({"borderColor":"#000"})
+        }).blur(function(){
+            $(this).css({"borderColor":"#e0e0e0"})
+        })
+
+
+        $("#btnLogin").click(function(){
+            addCookie("miName",$("#userId").val(),7);
+        });
+    })
+

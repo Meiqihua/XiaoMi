@@ -341,3 +341,18 @@ function goTypeId(){
         scrollTop:$(".goods-box").eq(typeID).prev().offset().top
     },700);
 }
+
+
+$(function(){
+    let attr = IndexShow();
+    attr[0]();
+    attr[1]();
+    allGoodsBox();
+    cookieShow();
+
+    // 后端数据交互
+    bannerShow();
+    getAllGoodsData();
+
+    addTypeId();
+});
